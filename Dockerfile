@@ -15,11 +15,9 @@ RUN git clone git://github.com/ps2dev/ps2sdk-ports.git /ports \
     && cd /ports/libtiff \
     && make all \
     && make install \
-
     && git clone git://github.com/ps2dev/gsKit /gsKit \
     && cd /gsKit \
     && ./setup.sh \
-
     && rm -rf /ports \
     && rm -rf /gsKit
 
@@ -30,7 +28,7 @@ RUN apt-get update \
     && cd /ps2-packer \
     && make install \
     && apt-get remove -y zlib1g-dev libucl-dev \
-    && rm -rf /ps2-packer /var/lib/apt/lists/* \
+    && rm -rf /ps2-packer /var/lib/apt/lists/*
 
 WORKDIR /src
 CMD ["/bin/bash"]
